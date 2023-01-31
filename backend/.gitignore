@@ -1,7 +1,9 @@
+dist
 node_modules
-pnpm-lock.yaml
-.DS_store
-/coverage
+worker
+package-lock.json
+yarn.lock
+.cargo-ok
 
-/dist
-
+# Output of 'npm pack'
+*.tgz

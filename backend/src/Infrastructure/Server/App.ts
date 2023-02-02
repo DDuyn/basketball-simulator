@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import cors from 'cors';
 import express from 'express';
 import Container from 'typedi';
-import { InitializeRouters } from './routes/initialize-routers';
+import { InitializeRouters } from '../Routes/InitializeRouters';
 
 export class App {
 	private static app: express.Application;

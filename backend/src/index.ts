@@ -1,8 +1,8 @@
-import { App } from './app';
-import { Database } from './database';
+import { DatabaseContext } from './Infrastructure/Persistence/Context/DatabaseContext';
+import { App } from './Infrastructure/Server/App';
 
 const bootstrap = async () => {
-	await Database.connect();
+	await DatabaseContext.getInstance();
 	const app = App.init();
 
 	app.listen(3000, () => {

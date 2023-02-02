@@ -7,6 +7,9 @@
     "test": "jest --verbose",
     "dev": "nodemon src/index.ts"
   },
+  "prisma": {
+    "schema": "src/Infrastructure/Persistence/schema.prisma"
+  },
   "license": "MIT",
   "dependencies": {
     "cors": "2.8.5",

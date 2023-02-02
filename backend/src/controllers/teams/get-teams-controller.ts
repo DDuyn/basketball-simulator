@@ -1,29 +1,17 @@
-import { Hono } from 'hono';
+import express, { Request, Response } from 'express';
 import { Service } from 'typedi';
+import { GetTeamsService } from '../../services/teams/get-teams-service';
 import { Controller } from '../controller';
 
 @Service()
 export class GetTeamsController implements Controller {
-	async run() {
-		const teams = [
-			{
-				teamId: '1',
-				name: 'Spain',
-				shortName: 'SPA'
-			},
-			{
-				teamId: '2',
-				name: 'Argentina',
-				shortName: 'ARG'
-			}
-		];
-		return teams;
+	constructor(private readonly getTeamsService: GetTeamsService) {}
+	async run(response: Response) {
+		const teams = this.getTeamsService.run();
+		return response.status(200).json(teams);
 	}
 
-	init(app: Hono): void {
-		app.get('/teams', async (ctx) => {
-			const teams = await this.run();
-			return ctx.json(teams, 200);
-		});
+	init(app: express.Application): void {
+		app.get('/teams', (request: Request, response: Response) => this.run(response));
 	}
 }

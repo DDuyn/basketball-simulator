@@ -1,5 +1,13 @@
-import { App } from './app'
+import { App } from './app';
+import { Database } from './database';
 
-const app = App.init()
+const bootstrap = async () => {
+	await Database.connect();
+	const app = App.init();
 
-export default app
+	app.listen(3000, () => {
+		console.log(`App listening on the port ${3000}`);
+	});
+};
+
+bootstrap();

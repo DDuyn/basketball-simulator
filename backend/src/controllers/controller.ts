@@ -1,5 +1,5 @@
-import { Hono } from 'hono';
+import express from 'express';
 
 export interface Controller {
-	init(app: Hono): void;
+	init(app: express.Application): void;
 }

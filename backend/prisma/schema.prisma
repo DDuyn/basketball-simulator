@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../db/basketball-simulator.sqlite3"
+}
+
+model Region {
+  id           Int           @id @default(autoincrement())
+  name         String
+  code         String
+  competitions Competition[]
+  teams        Team[]
+}
+
+model Team {
+  id       Int    @id @default(autoincrement())
+  name     String
+  code     String
+  regionId Int
+  region   Region @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Competition {
+  id       Int    @id @default(autoincrement())
+  name     String
+  code     String
+  quantity Int
+  games    Int
+  regionId Int
+  region   Region @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}

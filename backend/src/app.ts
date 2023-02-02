@@ -1,14 +1,15 @@
 import 'reflect-metadata';
 
-import { Hono } from 'hono';
-import { cors } from 'hono/cors';
-import { logger } from 'hono/logger';
-import { configControllers } from './controllers/config-controllers';
+import cors from 'cors';
+import express from 'express';
+import Container from 'typedi';
+import { ConfigControllers } from './controllers/config-controllers';
 
 export class App {
-	private static app: Hono = new Hono();
+	private static app: express.Application;
 
 	public static init() {
+		this.app = express();
 		this.initMiddleware();
 		this.initRoutes();
 		this.initControllers();
@@ -17,15 +18,17 @@ export class App {
 	}
 
 	private static initMiddleware() {
-		this.app.use('*', cors());
-		this.app.use('*', logger());
+		this.app.use(cors());
+		this.app.use(express.json());
+		this.app.use(express.urlencoded({ extended: true }));
 	}
 
 	private static initControllers() {
-		configControllers(this.app);
+		const c = Container.get(ConfigControllers);
+		c.run(this.app);
 	}
 
 	private static initRoutes() {
-		this.app.get('/health', (ctx) => ctx.text('200'));
+		this.app.get('/health', (req, res) => res.status(200).send());
 	}
 }

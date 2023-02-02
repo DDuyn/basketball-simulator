@@ -1,10 +1,20 @@
 {
   "compilerOptions": {
-    "lib": ["ES2020"],
-    "types": ["jest", "@cloudflare/workers-types"],
+    "module": "ES2022",
+    "target": "ES2022",
+    "types": ["jest", "node", "express", "cors"],
     "rootDirs": ["src", "test"],
+    "esModuleInterop": true,
     "strict": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true
-  }
+    "experimentalDecorators": true
+  },
+  "lib": ["ES2022"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["./src/**/*.ts", "./types/**/*.d.ts"],
+  "exclude": ["node_modules"]
 }

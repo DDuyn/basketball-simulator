@@ -4,6 +4,7 @@ worker
 package-lock.json
 yarn.lock
 .cargo-ok
+*.sqlite3-journal
 
 # Output of 'npm pack'
 *.tgz

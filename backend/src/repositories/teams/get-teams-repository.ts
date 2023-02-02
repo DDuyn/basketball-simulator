@@ -1,15 +1,11 @@
+import { Team } from '@prisma/client';
 import { Service } from 'typedi';
-import { Team } from '../../models/team';
-import { Repository } from '../repository';
+import { Database } from '../../database/index';
 
 @Service()
-export class GetTeamRepository extends Repository {
-	constructor() {
-		super();
-		this.init();
-	}
-
+export class GetTeamRepository {
 	async run(): Promise<Team[]> {
-		return this.connection.team.findMany();
+		const connection = await Database.getConnection();
+		return connection.team.findMany();
 	}
 }

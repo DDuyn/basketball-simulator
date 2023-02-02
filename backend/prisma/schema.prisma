@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Region {
-  id           Int           @id @default(autoincrement())
+  id           String        @id @default(uuid())
   name         String
   code         String
   competitions Competition[]
@@ -16,19 +16,19 @@ model Region {
 }
 
 model Team {
-  id       Int    @id @default(autoincrement())
+  id       String @id @default(uuid())
   name     String
   code     String
-  regionId Int
+  regionId String
   region   Region @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
 model Competition {
-  id       Int    @id @default(autoincrement())
+  id       String @id @default(uuid())
   name     String
   code     String
   quantity Int
   games    Int
-  regionId Int
+  regionId String
   region   Region @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }

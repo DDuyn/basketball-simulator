@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import cors from 'cors';
 import express from 'express';
 import Container from 'typedi';
-import { ConfigControllers } from './controllers/config-controllers';
+import { InitializeRouters } from './routes/initialize-routers';
 
 export class App {
 	private static app: express.Application;
@@ -12,7 +12,6 @@ export class App {
 		this.app = express();
 		this.initMiddleware();
 		this.initRoutes();
-		this.initControllers();
 
 		return this.app;
 	}
@@ -23,12 +22,9 @@ export class App {
 		this.app.use(express.urlencoded({ extended: true }));
 	}
 
-	private static initControllers() {
-		const c = Container.get(ConfigControllers);
-		c.run(this.app);
-	}
-
 	private static initRoutes() {
+		const configRouter = Container.get(InitializeRouters);
+		configRouter.run(this.app);
 		this.app.get('/health', (req, res) => res.status(200).send());
 	}
 }

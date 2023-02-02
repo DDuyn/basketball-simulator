@@ -12,7 +12,7 @@ export class Database {
 		}
 	}
 
-	static getConnection(): PrismaClient {
+	static async getConnection(): Promise<PrismaClient> {
 		return this.DB;
 	}
 }

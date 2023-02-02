@@ -5,7 +5,7 @@ export class Database {
 
 	static async connect() {
 		try {
-			this.DB = new PrismaClient();
+			this.DB = new PrismaClient({ log: ['query'] });
 			console.log('Connected to the database');
 		} catch (error: any) {
 			throw new Error(error);

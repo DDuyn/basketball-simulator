@@ -1,5 +1,4 @@
 import { Service } from 'typedi';
-import { Database } from '../../database';
 import { Team } from '../../models/team';
 import { Repository } from '../repository';
 
@@ -7,10 +6,10 @@ import { Repository } from '../repository';
 export class GetTeamRepository extends Repository {
 	constructor() {
 		super();
+		this.init();
 	}
 
 	async run(): Promise<Team[]> {
-		const connection = await Database.getConnection();
-		return connection.team.findMany();
+		return this.connection.team.findMany();
 	}
 }

@@ -1,23 +1,23 @@
 import express from 'express';
 import { Service } from 'typedi';
-import { Router } from './Router';
-import { RouterTeam } from './Team/RouterTeam';
+import { InitializerRouter } from './Router';
+import { InitializeRouterV1 } from './v1/InitializeRouterV1';
+import { InitializeRouterV2 } from './v2/InitializeRouterV2';
 
 @Service()
 export class InitializeRouters {
-	private routers: Router[] = [];
+	private routers: InitializerRouter[] = [];
 
-	constructor(private readonly routeTeam: RouterTeam) {
-		this.init();
-	}
-
-	private init() {
-		this.routers = [this.routeTeam];
+	constructor(
+		private readonly routerV1: InitializeRouterV1,
+		private readonly routerV2: InitializeRouterV2
+	) {
+		this.routers = [this.routerV1, this.routerV2];
 	}
 
 	async run(app: express.Application) {
 		for (const route of this.routers) {
-			app.use(await route.run());
+			await route.init(app);
 		}
 	}
 }

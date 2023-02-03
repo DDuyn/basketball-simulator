@@ -25,6 +25,6 @@ export class App {
 	private static initRoutes() {
 		const configRouter = Container.get(InitializeRouters);
 		configRouter.run(this.app);
-		this.app.get('/health', (req, res) => res.status(200).send());
+		this.app.get('/api/health', (req, res) => res.status(200).send());
 	}
 }

@@ -1,11 +1,10 @@
 import { Request, Response } from 'express';
 import { Service } from 'typedi';
-import { GetAllTeams } from '../../../Features/Team/GetAllTeams/GetAllTeams';
-
-import { Router } from '../Router';
+import { GetAllTeams } from '../../../../Features/Team/GetAllTeams/GetAllTeams';
+import { Router } from '../../Router';
 
 @Service()
-export class RouterTeam extends Router {
+export class RouterTeamV2 extends Router {
 	constructor(private readonly getAllTeams: GetAllTeams) {
 		super();
 	}

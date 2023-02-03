@@ -14,3 +14,8 @@ export abstract class Router {
 
 	protected abstract init(): void;
 }
+
+export interface InitializerRouter {
+	routers: Router[];
+	init(app: express.Application): Promise<void>;
+}

@@ -1,8 +1,9 @@
+import Container from 'typedi';
 import { DatabaseContext } from './Infrastructure/Persistence/Context/DatabaseContext';
 import { App } from './Infrastructure/Server/App';
 
 const bootstrap = async () => {
-	await DatabaseContext.getInstance();
+	await Container.set(DatabaseContext, DatabaseContext.getInstance());
 	const app = App.init();
 
 	app.listen(3000, () => {

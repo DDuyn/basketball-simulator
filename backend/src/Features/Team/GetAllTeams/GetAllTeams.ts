@@ -1,6 +1,7 @@
 import { Response } from 'express';
 import { Service } from 'typedi';
 import { DatabaseContext } from '../../../Infrastructure/Persistence/Context/DatabaseContext';
+import { GetAllTeamsResponse } from './GetAllTeamsResponse';
 
 @Service()
 export class GetAllTeams {
@@ -8,7 +9,7 @@ export class GetAllTeams {
 
 	async run(response: Response) {
 		const connection = await this.dbContext.getConnection();
-		const teams = connection.team.findMany();
+		const teams: GetAllTeamsResponse[] = await connection.team.findMany();
 
 		return response.status(200).json(teams);
 	}

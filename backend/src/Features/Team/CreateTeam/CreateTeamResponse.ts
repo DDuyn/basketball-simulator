@@ -1,7 +1,6 @@
-export interface GetAllTeamsResponse {
+export interface CreateTeamResponse {
 	id: string;
 	name: string;
 	code: string;
 	regionId: string;
-	regionName: string;
 }

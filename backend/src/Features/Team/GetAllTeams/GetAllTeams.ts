@@ -9,8 +9,18 @@ export class GetAllTeams {
 
 	async run(response: Response) {
 		const connection = await this.dbContext.getConnection();
-		const teams: GetAllTeamsResponse[] = await connection.team.findMany();
+		const teams = await connection.team.findMany({
+			include: {
+				region: true
+			}
+		});
 
-		return response.status(200).json(teams);
+		const teamsResponse: GetAllTeamsResponse[] = teams.map((team) => {
+			const { id, name, code, region } = team;
+
+			return { id, name, code, regionId: region.id, regionName: region.name };
+		});
+
+		return response.status(200).json(teamsResponse);
 	}
 }

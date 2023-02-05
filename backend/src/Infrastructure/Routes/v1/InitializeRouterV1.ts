@@ -1,8 +1,8 @@
 import express from 'express';
 import { Service } from 'typedi';
+import { RouterRegionV1 } from '../../../Features/Region/v1/RouteRegionV1';
+import { RouterTeamV1 } from '../../../Features/Team/v1/RouterTeamV1';
 import { InitializerRouter, Router } from '../Router';
-import { RouterRegionV1 } from './Region/RouterRegion';
-import { RouterTeamV1 } from './Team/RouterTeam';
 
 @Service()
 export class InitializeRouterV1 implements InitializerRouter {

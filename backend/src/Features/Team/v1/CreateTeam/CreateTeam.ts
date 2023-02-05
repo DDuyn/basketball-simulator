@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Service } from 'typedi';
-import { DatabaseContext } from '../../../Infrastructure/Persistence/Context/DatabaseContext';
+import { DatabaseContext } from '../../../../Infrastructure/Persistence/Context/DatabaseContext';
 import { CreateTeamRequest } from './CreateTeamRequest';
 import { CreateTeamResponse } from './CreateTeamResponse';
 

@@ -5,14 +5,14 @@ export abstract class Router {
 
 	constructor() {
 		this.route = express.Router();
-		this.init();
+		this.configure();
 	}
 
 	async run(): Promise<express.Router> {
 		return Promise.resolve(this.route);
 	}
 
-	protected abstract init(): void;
+	protected abstract configure(): void;
 }
 
 export interface InitializerRouter {

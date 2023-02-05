@@ -1,6 +1,6 @@
 import { Response } from 'express';
 import { Service } from 'typedi';
-import { DatabaseContext } from '../../../Infrastructure/Persistence/Context/DatabaseContext';
+import { DatabaseContext } from '../../../../Infrastructure/Persistence/Context/DatabaseContext';
 import { GetAllTeamsResponse } from './GetAllTeamsResponse';
 
 @Service()

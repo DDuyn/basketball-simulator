@@ -1,0 +1,15 @@
+{"level":"error","message":"[{\"value\":2,\"msg\":\"The name must be a string\",\"param\":\"name\",\"location\":\"body\"}]"}
+{"level":"error","message":[{"location":"body","msg":"The name must be a string","param":"name","value":2}]}
+{"level":"error","message":"[{\"value\":2,\"msg\":\"The name must be a string\",\"param\":\"name\",\"location\":\"body\"},{\"value\":2,\"msg\":\"The code must be a string\",\"param\":\"code\",\"location\":\"body\"}]"}
+{"level":"error","message":"[{\"value\":2,\"msg\":\"The name must be a string\",\"param\":\"name\",\"location\":\"body\"},{\"value\":2,\"msg\":\"The code must be a string\",\"param\":\"code\",\"location\":\"body\"}]"}
+{"level":"error","message":"[{\"value\":2,\"msg\":\"The name must be a string\",\"param\":\"name\",\"location\":\"body\"},{\"value\":2,\"msg\":\"The code must be a string\",\"param\":\"code\",\"location\":\"body\"}]"}
+{"level":"error","message":"[{\"name\":\"The name must be a string\"},{\"code\":\"The code must be a string\"}]"}
+{"level":"error","message":"[{\"name\":\"The name must be a string - 2\"},{\"code\":\"The code must be a string - 2\"}]"}
+{"level":"error","message":"[{\"Param\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Param\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\"}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\"}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name is required\"},{\"Field\":\"name\",\"Message\":\"The name must be a string\"},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}

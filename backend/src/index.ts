@@ -1,14 +1,11 @@
 import Container from 'typedi';
 import { DatabaseContext } from './Infrastructure/Persistence/Context/DatabaseContext';
-import { App } from './Infrastructure/Server/App';
+import { Server } from './Infrastructure/Server/Server';
 
 const bootstrap = async () => {
 	await Container.set(DatabaseContext, DatabaseContext.getInstance());
-	const app = App.init();
-
-	app.listen(3000, () => {
-		console.log(`App listening on the port ${3000}`);
-	});
+	const app = await Container.get(Server);
+	await app.init();
 };
 
 bootstrap();

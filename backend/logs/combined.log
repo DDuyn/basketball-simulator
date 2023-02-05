@@ -1,0 +1,52 @@
+{"level":"info","message":"[2023-02-05T10:53:47.950Z] GET /api/v1/teams"}
+{"level":"info","message":"[2023-02-05T10:55:24.215Z] GET /api/v1/teams"}
+{"level":"info","message":"[2023-02-05T11:02:28.006Z] GET /teams 59ms"}
+{"level":"info","message":"[2023-02-05T11:02:51.251Z] GET /teams 5ms"}
+{"level":"info","message":"[2023-02-05T11:03:21.087Z] GET /teams 27ms"}
+{"level":"info","message":"[2023-02-05T11:03:49.049Z] GET /api/v1/teams "}
+{"level":"info","message":"[2023-02-05T11:03:49.085Z] GET /teams 36ms"}
+{"level":"info","message":"[2023-02-05 11:09:13] GET /teams 1ms"}
+{"level":"info","message":"[2023-02-05 11:10:20] GET /teams 2ms"}
+{"level":"info","message":"[2023-02-05 11:11:30] GET /api/v1/teams 36ms"}
+{"level":"info","message":"[2023-02-05 11:46:29] GET /api/v1/teams 59ms"}
+{"level":"info","message":"[2023-02-05 11:48:53]: \n\t\t\t\tMethod: GET \n\t\t\t\tEndpoint: /api/v1/teams \n\t\t\t\tResponseTime: 29ms"}
+{"level":"info","message":"[2023-02-05 11:49:39]: \n\t\t\t\tMethod: GET \n\t\t\t\tEndpoint: /api/v1/teams \n\t\t\t\tResponseTime: 60ms"}
+{"level":"info","message":"[2023-02-05 11:50:11]: Method: GET Endpoint: /api/v1/teams ResponseTime: 61ms"}
+{"level":"info","message":"[2023-02-05 11:50:42] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 33ms"}
+{"level":"info","message":"[2023-02-05 11:54:33] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 34ms"}
+{"level":"info","message":"[2023-02-05 12:02:07] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 37ms"}
+{"level":"info","message":"Getting teams [object Object],[object Object]"}
+{"level":"info","message":"[2023-02-05 12:02:42] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 37ms"}
+{"level":"error","message":"[{\"value\":2,\"msg\":\"The name must be a string\",\"param\":\"name\",\"location\":\"body\"}]"}
+{"level":"info","message":"[2023-02-05 12:15:59] --> Method: POST Endpoint: /api/v1/team ResponseTime: 15ms"}
+{"level":"error","message":[{"location":"body","msg":"The name must be a string","param":"name","value":2}]}
+{"level":"info","message":"[2023-02-05 12:17:19] --> Method: POST Endpoint: /api/v1/team ResponseTime: 14ms"}
+{"level":"error","message":"[{\"value\":2,\"msg\":\"The name must be a string\",\"param\":\"name\",\"location\":\"body\"},{\"value\":2,\"msg\":\"The code must be a string\",\"param\":\"code\",\"location\":\"body\"}]"}
+{"level":"info","message":"[2023-02-05 12:19:04] --> Method: POST Endpoint: /api/v1/team ResponseTime: 13ms"}
+{"level":"info","message":"[2023-02-05 17:22:39] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 61ms"}
+{"level":"error","message":"[{\"value\":2,\"msg\":\"The name must be a string\",\"param\":\"name\",\"location\":\"body\"},{\"value\":2,\"msg\":\"The code must be a string\",\"param\":\"code\",\"location\":\"body\"}]"}
+{"level":"info","message":"[2023-02-05 17:38:48] --> Method: POST Endpoint: /api/v1/team ResponseTime: 16ms"}
+{"level":"error","message":"[{\"value\":2,\"msg\":\"The name must be a string\",\"param\":\"name\",\"location\":\"body\"},{\"value\":2,\"msg\":\"The code must be a string\",\"param\":\"code\",\"location\":\"body\"}]"}
+{"level":"info","message":"[2023-02-05 17:39:30] --> Method: POST Endpoint: /api/v1/team ResponseTime: 7ms"}
+{"level":"error","message":"[{\"name\":\"The name must be a string\"},{\"code\":\"The code must be a string\"}]"}
+{"level":"info","message":"[2023-02-05 18:18:59] --> Method: POST Endpoint: /api/v1/team ResponseTime: 18ms"}
+{"level":"error","message":"[{\"name\":\"The name must be a string - 2\"},{\"code\":\"The code must be a string - 2\"}]"}
+{"level":"info","message":"[2023-02-05 18:20:16] --> Method: POST Endpoint: /api/v1/team ResponseTime: 9ms"}
+{"level":"error","message":"[{\"Param\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Param\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"info","message":"[2023-02-05 18:21:18] --> Method: POST Endpoint: /api/v1/team ResponseTime: 12ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\"}]"}
+{"level":"info","message":"[2023-02-05 18:22:09] --> Method: POST Endpoint: /api/v1/team ResponseTime: 15ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\"}]"}
+{"level":"info","message":"[2023-02-05 18:22:18] --> Method: POST Endpoint: /api/v1/team ResponseTime: 3ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"info","message":"[2023-02-05 18:22:26] --> Method: POST Endpoint: /api/v1/team ResponseTime: 1ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name is required\"},{\"Field\":\"name\",\"Message\":\"The name must be a string\"},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"info","message":"[2023-02-05 18:22:30] --> Method: POST Endpoint: /api/v1/team ResponseTime: 3ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"info","message":"[2023-02-05 18:22:38] --> Method: POST Endpoint: /api/v1/team ResponseTime: 2ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"info","message":"[2023-02-05 20:14:28] --> Method: POST Endpoint: /api/v1/team ResponseTime: 15ms"}
+{"level":"info","message":"[2023-02-05 20:59:07] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 59ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":2},{\"Field\":\"code\",\"Message\":\"The code must be a string\",\"Value\":2}]"}
+{"level":"info","message":"[2023-02-05 20:59:14] --> Method: POST Endpoint: /api/v1/team ResponseTime: 8ms"}
+{"level":"info","message":"[2023-02-05 20:59:52] --> Method: POST Endpoint: /api/v1/team ResponseTime: 13ms"}

@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { Service } from 'typedi';
-import { CreateRegion } from '../../../../Features/Region/CreateRegion/CreateRegion';
-import { Router } from '../../Router';
+import { Router } from '../../../Infrastructure/Routes/Router';
+import { CreateRegion } from './CreateRegion/CreateRegion';
 
 @Service()
 export class RouterRegionV1 extends Router {
@@ -9,7 +9,7 @@ export class RouterRegionV1 extends Router {
 		super();
 	}
 
-	init(): void {
+	configure(): void {
 		this.route.post('/region', (request: Request, response: Response) =>
 			this.createRegion.run(request, response)
 		);

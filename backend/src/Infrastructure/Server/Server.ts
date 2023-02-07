@@ -4,6 +4,7 @@ import cors from 'cors';
 import express from 'express';
 import Container, { Service } from 'typedi';
 import { Logger } from '../Logging/Logger';
+
 import { LoggerMiddleware } from '../Middleware/LoggerMiddleware';
 import { RegisterEndpoints } from '../Routes/RegisterEndpoints';
 
@@ -14,8 +15,8 @@ export class Server {
 	constructor(private readonly logger: LoggerMiddleware) {
 		this.app = express();
 		this.initLogger();
-		this.initMiddleware();
 		this.initRoutes();
+		this.initMiddleware();
 	}
 
 	public init() {

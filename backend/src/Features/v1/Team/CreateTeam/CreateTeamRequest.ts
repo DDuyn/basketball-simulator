@@ -1,4 +1,5 @@
 import { body } from 'express-validator';
+import { SchemaValidation } from '../../../../Infrastructure/Types/SchemaValidation';
 
 export interface CreateTeamRequest {
 	name: string;
@@ -6,7 +7,7 @@ export interface CreateTeamRequest {
 	regionId: string;
 }
 
-export const CreateTeamRequestRules = [
+export const CreateTeamSchemaValidation: SchemaValidation = [
 	body('name')
 		.notEmpty()
 		.withMessage('The name is required')

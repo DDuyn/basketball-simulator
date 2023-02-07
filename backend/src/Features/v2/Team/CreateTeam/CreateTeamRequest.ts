@@ -1,4 +1,4 @@
-import { body } from 'express-validator';
+import { ValidationChain, body } from 'express-validator';
 
 export interface CreateTeamRequest {
 	name: string;
@@ -6,7 +6,7 @@ export interface CreateTeamRequest {
 	regionId: string;
 }
 
-export const CreateTeamRequestRules = [
+export const CreateTeamRequestRules: ValidationChain[] = [
 	body('name')
 		.notEmpty()
 		.withMessage('The name is required')

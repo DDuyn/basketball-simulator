@@ -66,3 +66,34 @@
 {"level":"info","message":"[2023-02-07 10:37:01] --> Method: POST Endpoint: /api/v2/team ResponseTime: 1ms"}
 {"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}
 {"level":"info","message":"[2023-02-07 10:37:43] --> Method: POST Endpoint: /api/v2/team ResponseTime: 14ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}
+{"level":"info","message":"[2023-02-07 11:14:18] --> Method: POST Endpoint: /api/v2/team ResponseTime: 9ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}
+{"level":"info","message":"[2023-02-07 11:15:47] --> Method: POST Endpoint: /api/v2/team ResponseTime: 11ms"}
+{"level":"info","message":"[2023-02-07 11:15:50] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 38ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}
+{"level":"info","message":"[2023-02-07 11:20:15] --> Method: POST Endpoint: /api/v2/team ResponseTime: 11ms"}
+{"level":"info","message":"[2023-02-07 11:20:17] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 40ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}
+{"level":"info","message":"[2023-02-07 11:20:24] --> Method: POST Endpoint: /api/v1/team ResponseTime: 3ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}
+{"level":"info","message":"[2023-02-07 11:20:25] --> Method: POST Endpoint: /api/v1/team ResponseTime: 3ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}
+{"level":"info","message":"[2023-02-07 12:03:25] --> Method: POST Endpoint: /api/v1/team ResponseTime: 16ms"}
+{"clientVersion":"4.9.0","level":"error"}
+{"level":"info","message":"[2023-02-07 12:06:22] --> Method: POST Endpoint: /api/v2/team ResponseTime: 57ms"}
+{"clientVersion":"4.9.0","level":"error"}
+{"level":"info","message":"[2023-02-07 12:10:29] --> Method: POST Endpoint: /api/v2/team ResponseTime: 53ms"}
+{"clientVersion":"4.9.0","level":"error"}
+{"level":"info","message":"[2023-02-07 12:11:52] --> Method: POST Endpoint: /api/v2/team ResponseTime: 37ms"}
+{"clientVersion":"4.9.0","level":"error"}
+{"level":"info","message":"[2023-02-07 12:12:57] --> Method: POST Endpoint: /api/v2/team ResponseTime: 45ms"}
+{"level":"error","message":"\nInvalid `connection.team.create()` invocation in\n/Users/dduyn/Documents/dev/basketball-simulator/backend/src/Features/v2/Team/CreateTeam/CreateTeam.ts:16:65\n\n  13 async handle(request: Request, response: Response) {\n  14 \tconst team: CreateTeamRequest = request.body;\n  15 \tconst connection = await this.connection();\n→ 16 \tconst teamCreated: CreateTeamResponse = await connection.team.create({\n       data: {\n         name: 1,\n               ~\n         code: 'RUS',\n         regionId: '7166dfcb-f8c0-4fdd-9fa7-dbc8cc615480'\n       }\n     })\n\nArgument name: Got invalid value 1 on prisma.createOneTeam. Provided Int, expected String.\n\n"}
+{"level":"info","message":"[2023-02-07 12:13:23] --> Method: POST Endpoint: /api/v2/team ResponseTime: 43ms"}
+{"level":"error","message":"\nInvalid `connection.team.create()` invocation in\n/Users/dduyn/Documents/dev/basketball-simulator/backend/src/Features/v2/Team/CreateTeam/CreateTeam.ts:16:65\n\n  13 async handle(request: Request, response: Response) {\n  14 \tconst team: CreateTeamRequest = request.body;\n  15 \tconst connection = await this.connection();\n→ 16 \tconst teamCreated: CreateTeamResponse = await connection.team.create({\n       data: {\n         name: 1,\n               ~\n         code: 'RUS',\n         regionId: '7166dfcb-f8c0-4fdd-9fa7-dbc8cc615480'\n       }\n     })\n\nArgument name: Got invalid value 1 on prisma.createOneTeam. Provided Int, expected String.\n\n"}
+{"level":"info","message":"[2023-02-07 12:17:41] --> Method: POST Endpoint: /api/v2/team ResponseTime: 43ms"}
+{"level":"error","message":"\nInvalid `connection.team.create()` invocation in\n/Users/dduyn/Documents/dev/basketball-simulator/backend/src/Features/v2/Team/CreateTeam/CreateTeam.ts:16:65\n\n  13 async handle(request: Request, response: Response) {\n  14 \tconst team: CreateTeamRequest = request.body;\n  15 \tconst connection = await this.connection();\n→ 16 \tconst teamCreated: CreateTeamResponse = await connection.team.create({\n       data: {\n         name: 1,\n               ~\n         code: 'RUS',\n         regionId: '7166dfcb-f8c0-4fdd-9fa7-dbc8cc615480'\n       }\n     })\n\nArgument name: Got invalid value 1 on prisma.createOneTeam. Provided Int, expected String.\n\n"}
+{"level":"error","message":"\nInvalid `connection.team.create()` invocation in\n/Users/dduyn/Documents/dev/basketball-simulator/backend/src/Features/v2/Team/CreateTeam/CreateTeam.ts:16:65\n\n  13 async handle(request: Request, response: Response) {\n  14 \tconst team: CreateTeamRequest = request.body;\n  15 \tconst connection = await this.connection();\n→ 16 \tconst teamCreated: CreateTeamResponse = await connection.team.create({\n       data: {\n         name: 1,\n               ~\n         code: 'RUS',\n         regionId: '7166dfcb-f8c0-4fdd-9fa7-dbc8cc615480'\n       }\n     })\n\nArgument name: Got invalid value 1 on prisma.createOneTeam. Provided Int, expected String.\n\n"}
+{"level":"info","message":"[2023-02-07 12:18:27] --> Method: POST Endpoint: /api/v2/team ResponseTime: 44ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}
+{"level":"info","message":"[2023-02-07 12:19:44] --> Method: POST Endpoint: /api/v1/team ResponseTime: 6ms"}

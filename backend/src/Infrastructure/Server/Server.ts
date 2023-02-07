@@ -5,7 +5,7 @@ import express from 'express';
 import Container, { Service } from 'typedi';
 import { Logger } from '../Logging/Logger';
 import { LoggerMiddleware } from '../Middleware/LoggerMiddleware';
-import { InitializeRouters } from '../Routes/InitializeRouters';
+import { RegisterEndpoints } from '../Routes/RegisterEndpoints';
 
 @Service()
 export class Server {
@@ -36,8 +36,8 @@ export class Server {
 	}
 
 	private initRoutes() {
-		const configRouter = Container.get(InitializeRouters);
-		configRouter.run(this.app);
+		const registerEndpoints = Container.get(RegisterEndpoints);
+		registerEndpoints.run(this.app);
 		this.app.get('/api/health', (req, res) => res.status(200).send());
 	}
 }

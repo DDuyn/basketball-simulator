@@ -4,7 +4,7 @@ import { Endpoint } from '../../../../Infrastructure/Routes/Endpoint';
 import { GetAllTeamsResponse } from './GetAllTeamsResponse';
 
 @Service()
-export class GetAllTeams extends Endpoint {
+export class GetAllTeams extends Endpoint<Request, Response> {
 	configure(): void {
 		this.get('/teams');
 	}

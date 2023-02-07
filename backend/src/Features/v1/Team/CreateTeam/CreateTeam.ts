@@ -5,7 +5,7 @@ import { CreateTeamRequest, CreateTeamSchemaValidation } from './CreateTeamReque
 import { CreateTeamResponse } from './CreateTeamResponse';
 
 @Service()
-export class CreateTeam extends Endpoint {
+export class CreateTeam extends Endpoint<Request, Response> {
 	configure(): void {
 		this.post('/team', CreateTeamSchemaValidation);
 	}

@@ -5,7 +5,7 @@ import { CreateRegionRequest } from './CreateRegionRequest';
 import { CreateRegionResponse } from './CreateRegionResponse';
 
 @Service()
-export class CreateRegion extends Endpoint {
+export class CreateRegion extends Endpoint<Request, Response> {
 	configure(): void {
 		this.post('/region');
 	}

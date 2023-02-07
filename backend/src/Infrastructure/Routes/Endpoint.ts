@@ -10,7 +10,7 @@ export interface RegisterEndpoint {
 	registerEndpoints(app: express.Application): Promise<void>;
 }
 
-export abstract class Endpoint {
+export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 	private router: Router;
 
 	constructor(@Inject() private readonly dbContext: DatabaseContext) {
@@ -64,7 +64,7 @@ export abstract class Endpoint {
 
 	private async execute(request: Request, response: Response): Promise<Response> {
 		try {
-			return await this.handle(request, response);
+			return await this.handle(request as TReq, response as TRes);
 		} catch (error: any) {
 			Logger.error(error.message);
 			return response.status(500).json(error.message);
@@ -72,5 +72,5 @@ export abstract class Endpoint {
 	}
 
 	protected abstract configure(): void;
-	protected abstract handle(request: Request, response: Response): Promise<Response>;
+	protected abstract handle(request: TReq, response: TRes): Promise<TRes>;
 }

@@ -1,11 +1,11 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { Service } from 'typedi';
 import { Endpoint, RegisterEndpoint } from '../../Infrastructure/Routes/Endpoint';
 import { CreateTeam } from './Team/CreateTeam/CreateTeam';
 
 @Service()
 export class EndpointsV2 implements RegisterEndpoint {
-	private endpoints: Endpoint[];
+	private endpoints: Endpoint<Request, Response>[];
 
 	constructor(private readonly createTeam: CreateTeam) {
 		this.endpoints = [this.createTeam];

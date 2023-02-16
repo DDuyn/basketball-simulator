@@ -1,12 +1,16 @@
-import { ValidationChain, body } from 'express-validator';
+import { Request } from 'express';
+import { body } from 'express-validator';
+import { SchemaValidation } from '../../../../Infrastructure/Types/SchemaValidation';
 
-export interface CreateTeamRequest {
-	name: string;
-	code: string;
-	regionId: string;
+export interface CreateTeamRequest extends Request {
+	body: {
+		name: string;
+		code: string;
+		regionId: string;
+	};
 }
 
-export const CreateTeamRequestRules: ValidationChain[] = [
+export const CreateTeamSchemaValidation: SchemaValidation = [
 	body('name')
 		.notEmpty()
 		.withMessage('The name is required')

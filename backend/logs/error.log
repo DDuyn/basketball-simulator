@@ -53,3 +53,4 @@
 {"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"12\"}]"}
 {"level":"error","message":"No Team found"}
 {"level":"error","message":"No Team found"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":1}]"}

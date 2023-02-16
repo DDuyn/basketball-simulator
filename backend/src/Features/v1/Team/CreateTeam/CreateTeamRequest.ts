@@ -1,10 +1,13 @@
+import { Request } from 'express';
 import { body } from 'express-validator';
 import { SchemaValidation } from '../../../../Infrastructure/Types/SchemaValidation';
 
-export interface CreateTeamRequest {
-	name: string;
-	code: string;
-	regionId: string;
+export interface CreateTeamRequest extends Request {
+	body: {
+		name: string;
+		code: string;
+		regionId: string;
+	};
 }
 
 export const CreateTeamSchemaValidation: SchemaValidation = [

@@ -9,9 +9,5 @@ export interface GetTeamByNameRequest extends Request {
 }
 
 export const GetTeamByNameSchemaValidation: SchemaValidation = [
-	param('name')
-		.custom((value) => {
-			return Number.isNaN(Number(value));
-		})
-		.withMessage('The name must be string')
+	param('name').isAlpha().withMessage('The name must be string')
 ];

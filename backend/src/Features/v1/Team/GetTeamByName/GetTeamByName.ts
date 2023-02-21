@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import { NotFoundException } from '../../../../Infrastructure/Errors/NotFoundException';
+import { NotFoundException } from '../../../../Domain/Shared/Exceptions/NotFoundException';
 import { Endpoint } from '../../../../Infrastructure/Routes/Endpoint';
 import { GetTeamByNameRequest, GetTeamByNameSchemaValidation } from './GetTeamByNameRequest';
 import { GetTeamByNameResponse } from './GetTeamByNameResponse';
@@ -22,7 +22,7 @@ export class GetTeamByName extends Endpoint<GetTeamByNameRequest, GetTeamByNameR
 			where: { name },
 			include: { region: true }
 		});
-		//if (!team) throw new Error('aaas');
+
 		if (!team) throw new NotFoundException(`${name} team not found`);
 
 		const teamResponse = {

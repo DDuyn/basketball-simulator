@@ -5,6 +5,7 @@ import express from 'express';
 import Container, { Service } from 'typedi';
 import { Logger } from '../Logging/Logger';
 
+import { HandleExceptionMiddleware } from '../Middleware/HandleExceptionMiddleware';
 import { LoggerMiddleware } from '../Middleware/LoggerMiddleware';
 import { RegisterEndpoints } from '../Routes/RegisterEndpoints';
 
@@ -12,7 +13,10 @@ import { RegisterEndpoints } from '../Routes/RegisterEndpoints';
 export class Server {
 	private app: express.Application;
 
-	constructor(private readonly logger: LoggerMiddleware) {
+	constructor(
+		private readonly logger: LoggerMiddleware,
+		private readonly handleException: HandleExceptionMiddleware
+	) {
 		this.app = express();
 		this.initLogger();
 		this.initRoutes();
@@ -36,9 +40,10 @@ export class Server {
 		this.app.use(this.logger.run);
 	}
 
-	private initRoutes() {
+	private async initRoutes() {
 		const registerEndpoints = Container.get(RegisterEndpoints);
-		registerEndpoints.run(this.app);
-		this.app.get('/api/health', (req, res) => res.status(200).send());
+		await registerEndpoints.run(this.app);
+		this.app.get('/api/health', (_req, res) => res.status(200).send());
+		this.app.use(this.handleException.run);
 	}
 }

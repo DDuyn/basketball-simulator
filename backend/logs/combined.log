@@ -161,3 +161,105 @@
 {"level":"info","message":"[2023-02-12 12:49:30] --> Method: POST Endpoint: /api/v1/team ResponseTime: 12ms"}
 {"level":"info","message":"[2023-02-12 12:49:44] --> Method: POST Endpoint: /api/v1/team ResponseTime: 63ms"}
 {"level":"info","message":"[2023-02-12 12:54:24] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 55ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-20 20:31:36] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 59ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 09:34:41] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 63ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:22:18] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 58ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:22:39] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 42ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:28:38] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 36ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:30:06] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 46ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:33:03] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 42ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:49:49] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 63ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:52:18] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 53ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:57:38] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 44ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:57:39] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 9ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:57:50] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 40ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:58:27] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 41ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 10:58:48] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 41ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:05:21] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 65ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:06:24] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 55ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:08:15] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 44ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:14:15] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 61ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:14:38] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 43ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:15:12] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 47ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:15:12] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 5ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:15:13] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 5ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:15:14] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 4ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:17:32] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 41ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:32:31] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 48ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:38:28] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 66ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:39:23] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 70ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:39:48] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 45ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:41:09] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 44ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:41:45] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 33ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:41:46] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 6ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:41:46] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 5ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:41:47] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 5ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:41:47] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 6ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:42:04] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 43ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:42:25] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 51ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:42:44] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 44ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:43:21] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 45ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:44:08] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 65ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:44:32] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 33ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:44:49] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 40ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:45:09] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 33ms"}
+{"level":"error","message":"Team not found"}
+{"level":"info","message":"[2023-02-21 11:47:41] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 43ms"}
+{"level":"info","message":"[2023-02-21 11:47:46] --> Method: GET Endpoint: /api/v1/team/Spain ResponseTime: 8ms"}
+{"level":"error","message":"Belgium team not found"}
+{"level":"info","message":"[2023-02-21 11:49:16] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 41ms"}
+{"level":"error","message":"Belgium team not found"}
+{"level":"info","message":"[2023-02-21 12:19:24] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 66ms"}
+{"level":"error","message":"aaas"}
+{"level":"error","message":"aaas"}
+{"level":"info","message":"[2023-02-21 12:20:34] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 46ms"}
+{"level":"error","message":"aaas"}
+{"level":"info","message":"[2023-02-21 12:21:18] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 34ms"}
+{"level":"error","message":"Belgium team not found"}
+{"level":"info","message":"[2023-02-21 12:21:30] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 43ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"Belgium team not found\"}"}
+{"level":"info","message":"[2023-02-21 12:22:44] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 58ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"1\"}]"}
+{"level":"info","message":"[2023-02-21 12:23:46] --> Method: GET Endpoint: /api/v1/team/1 ResponseTime: 3ms"}

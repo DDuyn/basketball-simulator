@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import express, { Request, Response, Router } from 'express';
+import express, { NextFunction, Request, Response, Router } from 'express';
 import { Inject } from 'typedi';
-import { Logger } from '../Logging/Logger';
 import { RequestValidatorMiddleware } from '../Middleware/RequestValidatorMiddleware';
 import { DatabaseContext } from '../Persistence/Context/DatabaseContext';
 import { SchemaValidation } from '../Types/SchemaValidation';
@@ -31,7 +30,8 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 			route,
 			schemaValidation || [],
 			RequestValidatorMiddleware.run,
-			(request: Request, response: Response) => this.execute(request, response)
+			(request: Request, response: Response, next: NextFunction) =>
+				this.execute(request, response, next)
 		);
 	}
 
@@ -40,7 +40,8 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 			route,
 			schemaValidation || [],
 			RequestValidatorMiddleware.run,
-			(request: Request, response: Response) => this.execute(request, response)
+			(request: Request, response: Response, next: NextFunction) =>
+				this.execute(request, response, next)
 		);
 	}
 
@@ -49,7 +50,8 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 			route,
 			schemaValidation || [],
 			RequestValidatorMiddleware.run,
-			(request: Request, response: Response) => this.execute(request, response)
+			(request: Request, response: Response, next: NextFunction) =>
+				this.execute(request, response, next)
 		);
 	}
 
@@ -58,16 +60,20 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 			route,
 			schemaValidation || [],
 			RequestValidatorMiddleware.run,
-			(request: Request, response: Response) => this.execute(request, response)
+			(request: Request, response: Response, next: NextFunction) =>
+				this.execute(request, response, next)
 		);
 	}
 
-	private async execute(request: Request, response: Response): Promise<Response> {
+	private async execute(
+		request: Request,
+		response: Response,
+		next: NextFunction
+	): Promise<Response | void> {
 		try {
 			return await this.handle(request as TReq, response as TRes);
 		} catch (error: any) {
-			Logger.error(error.message);
-			return response.status(500).json(error.message);
+			return next(error);
 		}
 	}
 

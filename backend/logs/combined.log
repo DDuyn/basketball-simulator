@@ -335,3 +335,8 @@
 {"level":"info","message":"[2023-02-22 12:29:24] --> Method: POST Endpoint: /api/v1/region ResponseTime: 49ms"}
 {"level":"info","message":"[2023-02-22 14:16:29] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 25ms"}
 {"level":"info","message":"[2023-02-22 16:44:09] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 35ms"}
+{"level":"info","message":"[2023-02-22 20:18:17] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 36ms"}
+{"level":"info","message":"[2023-02-22 20:18:49] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 32ms"}
+{"level":"info","message":"[2023-02-22 20:19:28] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 12ms"}
+{"level":"info","message":"[2023-02-22 20:19:40] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 61ms"}
+{"level":"info","message":"[2023-02-22 20:19:52] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 30ms"}

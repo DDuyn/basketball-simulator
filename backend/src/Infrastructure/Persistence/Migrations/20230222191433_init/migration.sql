@@ -10,6 +10,7 @@ CREATE TABLE "Team" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
     "code" TEXT NOT NULL,
+    "flag" TEXT NOT NULL,
     "regionId" TEXT NOT NULL,
     CONSTRAINT "Team_regionId_fkey" FOREIGN KEY ("regionId") REFERENCES "Region" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION
 );
@@ -25,10 +26,11 @@ CREATE TABLE "Competition" (
     CONSTRAINT "Competition_regionId_fkey" FOREIGN KEY ("regionId") REFERENCES "Region" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
-
--- Create Index
+-- CreateIndex
 CREATE UNIQUE INDEX "Region_code_key" ON "Region"("code");
-CREATE UNIQUE INDEX "Competition_code_key" ON "Competition"("code");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Team_code_key" ON "Team"("code");
 
-
+-- CreateIndex
+CREATE UNIQUE INDEX "Competition_code_key" ON "Competition"("code");

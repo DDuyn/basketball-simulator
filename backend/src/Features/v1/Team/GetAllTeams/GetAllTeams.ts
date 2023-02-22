@@ -18,12 +18,13 @@ export class GetAllTeams extends Endpoint<Request, GetAllTeamsResponse> {
 		});
 
 		const teamsResponse: GetAllTeamsResponse[] = teams.map((team) => {
-			const { id, name, code, region } = team;
+			const { id, name, code, flag, region } = team;
 
 			return {
 				id,
 				name,
 				code,
+				flag,
 				regionId: region.id,
 				regionName: region.name
 			} as GetAllTeamsResponse;

@@ -7,6 +7,7 @@ export interface CreateTeamRequest extends Request {
 	body: {
 		name: string;
 		code: string;
+		flag: string;
 		region: Region;
 	};
 }

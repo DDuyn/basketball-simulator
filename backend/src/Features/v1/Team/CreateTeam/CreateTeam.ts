@@ -1,7 +1,9 @@
+import { Prisma } from '@prisma/client';
 import { randomUUID } from 'crypto';
 import { Service } from 'typedi';
 import { Team } from '../../../../Domain/Team/Team';
 import { TeamCode } from '../../../../Domain/Team/TeamCode';
+import { TeamFlag } from '../../../../Domain/Team/TeamFlag';
 import { TeamId } from '../../../../Domain/Team/TeamId';
 import { TeamName } from '../../../../Domain/Team/TeamName';
 import { Endpoint } from '../../../../Infrastructure/Routes/Endpoint';
@@ -18,9 +20,15 @@ export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> 
 		request: CreateTeamRequest,
 		response: CreateTeamResponse
 	): Promise<CreateTeamResponse> {
-		const { name, code, region } = request.body;
+		const { name, code, flag, region } = request.body;
 
-		const team = new Team(new TeamId(randomUUID()), new TeamName(name), new TeamCode(code), region);
+		const team = new Team(
+			new TeamId(randomUUID()),
+			new TeamName(name),
+			new TeamCode(code),
+			new TeamFlag(flag),
+			region
+		);
 
 		const connection = await this.connection();
 		const teamCreated = await connection.team.create({
@@ -28,8 +36,9 @@ export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> 
 				id: team.id.value,
 				name: team.name.value,
 				code: team.code.value,
+				flag: team.flag.value,
 				regionId: team.region.id.value
-			}
+			} as unknown as Prisma.TeamCreateInput
 		});
 
 		return response.status(201).json(teamCreated);

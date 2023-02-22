@@ -13,11 +13,11 @@ export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> 
 		request: CreateTeamRequest,
 		response: CreateTeamResponse
 	): Promise<CreateTeamResponse> {
-		const { name, code, regionId } = request.body;
+		const { name, code, flag = '', regionId } = request.body;
 
 		const connection = await this.connection();
 		const teamCreated = await connection.team.create({
-			data: { name, code, regionId }
+			data: { name, code, flag, regionId }
 		});
 
 		return response.status(201).json(teamCreated);

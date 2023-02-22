@@ -19,6 +19,7 @@ model Team {
   id       String @id @default(uuid())
   name     String
   code     String @unique
+  flag     String
   regionId String
   region   Region @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }

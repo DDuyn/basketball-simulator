@@ -29,6 +29,7 @@ export class GetTeamByName extends Endpoint<GetTeamByNameRequest, GetTeamByNameR
 			id: team.id,
 			name: team.name,
 			code: team.code,
+			flag: team.flag,
 			regionId: team.region.id,
 			regionName: team.region.name
 		} as GetTeamByNameResponse;

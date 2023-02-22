@@ -333,3 +333,5 @@
 {"level":"info","message":"[2023-02-22 12:14:39] --> Method: GET Endpoint: /api/v1/regions ResponseTime: 38ms"}
 {"level":"error","message":"{\"type\":\"PrismaException\",\"status\":500,\"code\":\"P2002\",\"meta\":{\"target\":[\"code\"]},\"message\":\"\\nInvalid `connection.region.create()` invocation in\\n/Users/dduyn/Documents/dev/basketball-simulator/backend/src/Features/v1/Region/CreateRegion/CreateRegion.ts:30:49\\n\\n  27 );\\n  28 \\n  29 const connection = await this.connection();\\n→ 30 const regionCreated = await connection.region.create(\\nUnique constraint failed on the fields: (`code`)\"}"}
 {"level":"info","message":"[2023-02-22 12:29:24] --> Method: POST Endpoint: /api/v1/region ResponseTime: 49ms"}
+{"level":"info","message":"[2023-02-22 14:16:29] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 25ms"}
+{"level":"info","message":"[2023-02-22 16:44:09] --> Method: GET Endpoint: /api/v1/teams ResponseTime: 35ms"}

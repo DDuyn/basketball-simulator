@@ -304,3 +304,17 @@
 {"level":"info","message":"[2023-02-21 19:20:56] --> Method: POST Endpoint: /api/v1/team ResponseTime: 62ms"}
 {"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"1\"}]"}
 {"level":"info","message":"[2023-02-21 19:22:03] --> Method: GET Endpoint: /api/v1/team/1 ResponseTime: 19ms"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"Invalid value\"}]"}
+{"level":"info","message":"[2023-02-22 09:15:33] --> Method: POST Endpoint: /api/v1/team ResponseTime: 17ms"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\",\"Value\":\"c20fefc1-529b-4c18-a7cc\"}]"}
+{"level":"info","message":"[2023-02-22 09:18:22] --> Method: POST Endpoint: /api/v1/team ResponseTime: 19ms"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"The regionId is required\",\"Value\":\"\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\",\"Value\":\"\"}]"}
+{"level":"info","message":"[2023-02-22 09:18:30] --> Method: POST Endpoint: /api/v1/team ResponseTime: 3ms"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"Invalid value\"},{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}
+{"level":"info","message":"[2023-02-22 09:18:39] --> Method: POST Endpoint: /api/v1/team ResponseTime: 3ms"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"The property region.id is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}
+{"level":"info","message":"[2023-02-22 09:19:30] --> Method: POST Endpoint: /api/v1/team ResponseTime: 16ms"}
+{"level":"info","message":"[2023-02-22 09:38:10] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 7ms"}
+{"level":"info","message":"[2023-02-22 10:12:00] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 12ms"}
+{"level":"info","message":"[2023-02-22 10:17:53] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 16ms"}
+{"level":"info","message":"[2023-02-22 10:18:45] --> Method: GET Endpoint: /api/v1/team/Belgium ResponseTime: 21ms"}

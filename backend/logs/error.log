@@ -121,3 +121,8 @@
 {"level":"error","message":"[{\"Field\":\"code\",\"Message\":\"The length of code must be three characters\",\"Value\":\"AN\"}]"}
 {"level":"error","message":"[{\"Field\":\"code\",\"Message\":\"The length of code must be three characters\",\"Value\":\"ANDD\"}]"}
 {"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"1\"}]"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"Invalid value\"}]"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\",\"Value\":\"c20fefc1-529b-4c18-a7cc\"}]"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"The regionId is required\",\"Value\":\"\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\",\"Value\":\"\"}]"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"Invalid value\"},{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}
+{"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"The property region.id is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}

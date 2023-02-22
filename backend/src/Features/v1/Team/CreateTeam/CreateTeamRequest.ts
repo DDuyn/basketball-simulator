@@ -25,5 +25,12 @@ export const CreateTeamSchemaValidation: SchemaValidation = [
 		.isString()
 		.withMessage('The code must be a string')
 		.isLength({ min: 3, max: 3 })
-		.withMessage('The length of code must be three characters')
+		.withMessage('The length of code must be three characters'),
+	body('region.id')
+		.exists()
+		.withMessage('The property region.id is required')
+		.notEmpty()
+		.withMessage('The regionId is required')
+		.isUUID()
+		.withMessage('The regionId must be uuid valid')
 ];

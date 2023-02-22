@@ -28,7 +28,7 @@ export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> 
 				id: team.id.value,
 				name: team.name.value,
 				code: team.code.value,
-				regionId: team.region.id
+				regionId: team.region.id.value
 			}
 		});
 

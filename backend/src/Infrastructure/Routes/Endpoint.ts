@@ -21,7 +21,7 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 		return this.router;
 	}
 
-	async connection(): Promise<PrismaClient> {
+	protected async connection(): Promise<PrismaClient> {
 		return this.dbContext.getConnection();
 	}
 

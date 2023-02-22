@@ -24,3 +24,11 @@ CREATE TABLE "Competition" (
     "regionId" TEXT NOT NULL,
     CONSTRAINT "Competition_regionId_fkey" FOREIGN KEY ("regionId") REFERENCES "Region" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+
+-- Create Index
+CREATE UNIQUE INDEX "Region_code_key" ON "Region"("code");
+CREATE UNIQUE INDEX "Competition_code_key" ON "Competition"("code");
+CREATE UNIQUE INDEX "Team_code_key" ON "Team"("code");
+
+

@@ -18,7 +18,7 @@ model Region {
 model Team {
   id       String @id @default(uuid())
   name     String
-  code     String
+  code     String @unique
   regionId String
   region   Region @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
@@ -26,7 +26,7 @@ model Team {
 model Competition {
   id       String @id @default(uuid())
   name     String
-  code     String
+  code     String @unique
   quantity Int
   games    Int
   regionId String

@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
-import { NotFoundException } from '../../../../Domain/Shared/Exceptions/NotFoundException';
-import { Endpoint } from '../../../../Infrastructure/Routes/Endpoint';
+import { NotFoundException } from '../../../Domain/Shared/Exceptions/NotFoundException';
+import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import {
 	GetTeamsByRegionRequest,
 	GetTeamsByRegionSchemaValidation

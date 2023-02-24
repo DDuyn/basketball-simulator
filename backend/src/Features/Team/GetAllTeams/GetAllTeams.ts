@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import { Service } from 'typedi';
-import { Endpoint } from '../../../../Infrastructure/Routes/Endpoint';
+import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import { GetAllTeamsResponse } from './GetAllTeamsResponse';
 
 @Service()

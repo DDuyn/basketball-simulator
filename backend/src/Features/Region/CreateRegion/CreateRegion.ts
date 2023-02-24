@@ -1,10 +1,10 @@
 import { randomUUID } from 'crypto';
 import { Service } from 'typedi';
-import { Region } from '../../../../Domain/Region/Region';
-import { RegionCode } from '../../../../Domain/Region/RegionCode';
-import { RegionId } from '../../../../Domain/Region/RegionId';
-import { RegionName } from '../../../../Domain/Region/RegionName';
-import { Endpoint } from '../../../../Infrastructure/Routes/Endpoint';
+import { Region } from '../../../Domain/Region/Region';
+import { RegionCode } from '../../../Domain/Region/RegionCode';
+import { RegionId } from '../../../Domain/Region/RegionId';
+import { RegionName } from '../../../Domain/Region/RegionName';
+import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import { CreateRegionRequest, CreateRegionSchemaValidation } from './CreateRegionRequest';
 import { CreateRegionResponse } from './CreateRegionResponse';
 

@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import { body } from 'express-validator';
-import { SchemaValidation } from '../../../../Infrastructure/Types/SchemaValidation';
+import { SchemaValidation } from '../../../Infrastructure/Types/SchemaValidation';
 
 export interface CreateRegionRequest extends Request {
 	body: {

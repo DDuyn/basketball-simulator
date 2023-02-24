@@ -1,20 +1,17 @@
-import express from 'express';
+import express, { Router } from 'express';
 import { Service } from 'typedi';
-import { EndpointsV1 } from '../../Features/v1/EndpointsV1';
-import { EndpointsV2 } from '../../Features/v2/EndpointsV2';
-import { RegisterEndpoint } from './Endpoint';
 
 @Service()
 export class RegisterEndpoints {
-	private routers: RegisterEndpoint[] = [];
+	private static routers: Router[] = [];
 
-	constructor(private readonly v1: EndpointsV1, private readonly v2: EndpointsV2) {
-		this.routers = [this.v1, this.v2];
+	static registerEndpoint(endpointRouter: Router): void {
+		this.routers.push(endpointRouter);
 	}
 
 	async run(app: express.Application) {
-		for (const route of this.routers) {
-			await route.registerEndpoints(app);
+		for (const route of RegisterEndpoints.routers) {
+			app.use('/api/', await route);
 		}
 	}
 }

@@ -1,11 +1,11 @@
 import { randomUUID } from 'crypto';
 import { Service } from 'typedi';
-import { Team } from '../../../../Domain/Team/Team';
-import { TeamCode } from '../../../../Domain/Team/TeamCode';
-import { TeamFlag } from '../../../../Domain/Team/TeamFlag';
-import { TeamId } from '../../../../Domain/Team/TeamId';
-import { TeamName } from '../../../../Domain/Team/TeamName';
-import { Endpoint } from '../../../../Infrastructure/Routes/Endpoint';
+import { Team } from '../../../Domain/Team/Team';
+import { TeamCode } from '../../../Domain/Team/TeamCode';
+import { TeamFlag } from '../../../Domain/Team/TeamFlag';
+import { TeamId } from '../../../Domain/Team/TeamId';
+import { TeamName } from '../../../Domain/Team/TeamName';
+import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import { CreateTeamRequest, CreateTeamSchemaValidation } from './CreateTeamRequest';
 import { CreateTeamResponse } from './CreateTeamResponse';
 

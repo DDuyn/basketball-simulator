@@ -1,9 +1,12 @@
+import 'reflect-metadata';
+
 import Container from 'typedi';
-import { DatabaseContext } from './Infrastructure/Persistence/Context/DatabaseContext';
+import { registerDbContext, registerUseCases } from './Infrastructure/DependencyInjection';
 import { Server } from './Infrastructure/Server/Server';
 
 const bootstrap = async () => {
-	await Container.set(DatabaseContext, DatabaseContext.getInstance());
+	await registerDbContext();
+	await registerUseCases();
 	const app = await Container.get(Server);
 	await app.init();
 };

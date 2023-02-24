@@ -1,34 +1,31 @@
 import { PrismaClient } from '@prisma/client';
-import express, { NextFunction, Request, Response, Router } from 'express';
+import { NextFunction, Request, Response, Router } from 'express';
 import { Inject } from 'typedi';
 
 import { RequestValidatorMiddleware } from '../Middleware/RequestValidatorMiddleware';
 import { DatabaseContext } from '../Persistence/Context/DatabaseContext';
 import { SchemaValidation } from '../Types/SchemaValidation';
-
-export interface RegisterEndpoint {
-	registerEndpoints(app: express.Application): Promise<void>;
-}
+import { RegisterEndpoints } from './RegisterEndpoints';
 
 export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 	private router: Router;
 	protected readonly VERBS = {
 		Get: (path: string, schemaValidation?: SchemaValidation) => {
 			this.get(path, schemaValidation);
-			//this.registerEndpoint();
+			this.registerEndpoint();
 		},
 
 		Post: (path: string, schemaValidation?: SchemaValidation) => {
 			this.post(path, schemaValidation);
-			//this.registerEndpoint();
+			this.registerEndpoint();
 		},
 		Put: (path: string, schemaValidation?: SchemaValidation) => {
 			this.put(path, schemaValidation);
-			//this.registerEndpoint();
+			this.registerEndpoint();
 		},
 		Delete: (path: string, schemaValidation?: SchemaValidation) => {
 			this.delete(path, schemaValidation);
-			//this.registerEndpoint();
+			this.registerEndpoint();
 		}
 	};
 
@@ -86,8 +83,7 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 	}
 
 	private registerEndpoint(): void {
-		//EndpointsV1.addEndpoint(this.router);
-		//RegisterEndpoints.registerEndpoint(this.router);
+		RegisterEndpoints.registerEndpoint(this.router);
 	}
 
 	private async execute(

@@ -7,7 +7,7 @@ import { GetTeamByNameResponse } from './GetTeamByNameResponse';
 @Service()
 export class GetTeamByName extends Endpoint<GetTeamByNameRequest, GetTeamByNameResponse> {
 	configure(): void {
-		this.get('/team/:name', GetTeamByNameSchemaValidation);
+		this.VERBS.Get('/team/by-name/:name', GetTeamByNameSchemaValidation);
 	}
 
 	async handle(

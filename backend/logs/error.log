@@ -132,3 +132,8 @@
 {"level":"error","message":"[{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}
 {"level":"error","message":"[{\"Field\":\"code\",\"Message\":\"The length of code must be three characters\",\"Value\":\"AF\"}]"}
 {"level":"error","message":"{\"type\":\"PrismaException\",\"status\":500,\"code\":\"P2002\",\"meta\":{\"target\":[\"code\"]},\"message\":\"\\nInvalid `connection.region.create()` invocation in\\n/Users/dduyn/Documents/dev/basketball-simulator/backend/src/Features/v1/Region/CreateRegion/CreateRegion.ts:30:49\\n\\n  27 );\\n  28 \\n  29 const connection = await this.connection();\\n→ 30 const regionCreated = await connection.region.create(\\nUnique constraint failed on the fields: (`code`)\"}"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":\"11\"},{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":\"1\"}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":\"1\"}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":\"11\"},{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":\"1\"}]"}

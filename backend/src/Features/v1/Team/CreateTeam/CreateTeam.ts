@@ -1,4 +1,3 @@
-import { Prisma } from '@prisma/client';
 import { randomUUID } from 'crypto';
 import { Service } from 'typedi';
 import { Team } from '../../../../Domain/Team/Team';
@@ -13,7 +12,8 @@ import { CreateTeamResponse } from './CreateTeamResponse';
 @Service()
 export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> {
 	configure(): void {
-		this.post('/team', CreateTeamSchemaValidation);
+		this.VERBS.Post('/team', CreateTeamSchemaValidation);
+		//this.post('v1/team', CreateTeamSchemaValidation);
 	}
 
 	async handle(
@@ -38,7 +38,7 @@ export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> 
 				code: team.code.value,
 				flag: team.flag.value,
 				regionId: team.region.id.value
-			} as unknown as Prisma.TeamCreateInput
+			}
 		});
 
 		return response.status(201).json(teamCreated);

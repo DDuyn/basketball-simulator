@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import express, { NextFunction, Request, Response, Router } from 'express';
 import { Inject } from 'typedi';
+
 import { RequestValidatorMiddleware } from '../Middleware/RequestValidatorMiddleware';
 import { DatabaseContext } from '../Persistence/Context/DatabaseContext';
 import { SchemaValidation } from '../Types/SchemaValidation';
@@ -11,6 +12,25 @@ export interface RegisterEndpoint {
 
 export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 	private router: Router;
+	protected readonly VERBS = {
+		Get: (path: string, schemaValidation?: SchemaValidation) => {
+			this.get(path, schemaValidation);
+			//this.registerEndpoint();
+		},
+
+		Post: (path: string, schemaValidation?: SchemaValidation) => {
+			this.post(path, schemaValidation);
+			//this.registerEndpoint();
+		},
+		Put: (path: string, schemaValidation?: SchemaValidation) => {
+			this.put(path, schemaValidation);
+			//this.registerEndpoint();
+		},
+		Delete: (path: string, schemaValidation?: SchemaValidation) => {
+			this.delete(path, schemaValidation);
+			//this.registerEndpoint();
+		}
+	};
 
 	constructor(@Inject() private readonly dbContext: DatabaseContext) {
 		this.router = Router();
@@ -25,7 +45,7 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 		return this.dbContext.getConnection();
 	}
 
-	protected post(route: string, schemaValidation?: SchemaValidation) {
+	private post(route: string, schemaValidation?: SchemaValidation) {
 		this.router.post(
 			route,
 			schemaValidation || [],
@@ -35,7 +55,7 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 		);
 	}
 
-	protected get(route: string, schemaValidation?: SchemaValidation) {
+	private get(route: string, schemaValidation?: SchemaValidation) {
 		this.router.get(
 			route,
 			schemaValidation || [],
@@ -45,7 +65,7 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 		);
 	}
 
-	protected delete(route: string, schemaValidation?: SchemaValidation) {
+	private delete(route: string, schemaValidation?: SchemaValidation) {
 		this.router.delete(
 			route,
 			schemaValidation || [],
@@ -55,7 +75,7 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 		);
 	}
 
-	protected put(route: string, schemaValidation?: SchemaValidation) {
+	private put(route: string, schemaValidation?: SchemaValidation) {
 		this.router.get(
 			route,
 			schemaValidation || [],
@@ -63,6 +83,11 @@ export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 			(request: Request, response: Response, next: NextFunction) =>
 				this.execute(request, response, next)
 		);
+	}
+
+	private registerEndpoint(): void {
+		//EndpointsV1.addEndpoint(this.router);
+		//RegisterEndpoints.registerEndpoint(this.router);
 	}
 
 	private async execute(

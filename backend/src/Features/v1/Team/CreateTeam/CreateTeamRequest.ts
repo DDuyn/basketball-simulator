@@ -16,12 +16,12 @@ export const CreateTeamSchemaValidation: SchemaValidation = [
 	body('name')
 		.notEmpty()
 		.withMessage('The name is required')
-		.isString()
+		.isAlpha()
 		.withMessage('The name must be a string'),
 	body('code')
 		.notEmpty()
 		.withMessage('The code is requireD')
-		.isString()
+		.isAlpha()
 		.withMessage('The code must be a string')
 		.isLength({ min: 3, max: 3 })
 		.withMessage('The length of code must be three characters'),

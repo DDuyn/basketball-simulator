@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import { Service } from 'typedi';
 import { Endpoint, RegisterEndpoint } from '../../Infrastructure/Routes/Endpoint';
 import { CreateRegion } from './Region/CreateRegion/CreateRegion';
-import { GetAllRegions } from './Region/GetAllRegions/GetAllRegion';
+import { GetAllRegions } from './Region/GetAllRegions/GetAllRegions';
 import { CreateTeam } from './Team/CreateTeam/CreateTeam';
 import { GetAllTeams } from './Team/GetAllTeams/GetAllTeams';
 import { GetTeamByName } from './Team/GetTeamByName/GetTeamByName';

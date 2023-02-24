@@ -6,7 +6,7 @@ import { CreateTeamResponse } from './CreateTeamResponse';
 @Service()
 export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> {
 	configure(): void {
-		this.post('/team', CreateTeamSchemaValidation);
+		this.VERBS.Post('/team', CreateTeamSchemaValidation);
 	}
 
 	async handle(

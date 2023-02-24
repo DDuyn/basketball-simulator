@@ -2,8 +2,7 @@ import 'reflect-metadata';
 
 import cors from 'cors';
 import express from 'express';
-import Container, { Service } from 'typedi';
-import { Logger } from '../Logging/Logger';
+import { Service } from 'typedi';
 
 import { HandleExceptionMiddleware } from '../Middleware/HandleExceptionMiddleware';
 import { LoggerMiddleware } from '../Middleware/LoggerMiddleware';
@@ -14,11 +13,11 @@ export class Server {
 	private app: express.Application;
 
 	constructor(
-		private readonly logger: LoggerMiddleware,
-		private readonly handleException: HandleExceptionMiddleware
+		private readonly loggerMiddleware: LoggerMiddleware,
+		private readonly handleExceptionMiddleware: HandleExceptionMiddleware,
+		private readonly registerEndpoints: RegisterEndpoints
 	) {
 		this.app = express();
-		this.initLogger();
 		this.initRoutes();
 		this.initMiddleware();
 	}
@@ -29,21 +28,16 @@ export class Server {
 		});
 	}
 
-	private initLogger() {
-		Logger.configure();
-	}
-
 	private initMiddleware() {
 		this.app.use(cors());
 		this.app.use(express.json());
 		this.app.use(express.urlencoded({ extended: true }));
-		this.app.use(this.logger.run);
+		this.app.use(this.loggerMiddleware.run);
 	}
 
 	private async initRoutes() {
-		const registerEndpoints = Container.get(RegisterEndpoints);
-		await registerEndpoints.run(this.app);
+		await this.registerEndpoints.run(this.app);
 		this.app.get('/api/health', (_req, res) => res.status(200).send());
-		this.app.use(this.handleException.run);
+		this.app.use(this.handleExceptionMiddleware.run);
 	}
 }

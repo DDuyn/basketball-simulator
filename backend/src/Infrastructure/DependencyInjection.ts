@@ -6,10 +6,11 @@ import { CreateTeam } from '../Features/Team/CreateTeam/CreateTeam';
 import { GetAllTeams } from '../Features/Team/GetAllTeams/GetAllTeams';
 import { GetTeamByName } from '../Features/Team/GetTeamByName/GetTeamByName';
 import { GetTeamsByRegion } from '../Features/Team/GetTeamsByRegion/GetTeamsByRegion';
+import { Logger } from './Logging/Logger';
 import { DatabaseContext } from './Persistence/Context/DatabaseContext';
 
 export const registerDbContext = async () => {
-	await Container.set(DatabaseContext, DatabaseContext.getInstance());
+	await Container.get(DatabaseContext);
 };
 
 export const registerUseCases = async () => {
@@ -22,4 +23,8 @@ export const registerUseCases = async () => {
 	await Container.get(GetAllTeams);
 	await Container.get(GetTeamByName);
 	await Container.get(GetTeamsByRegion);
+};
+
+export const registerLogger = async () => {
+	Logger.configure();
 };

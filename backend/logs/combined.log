@@ -425,3 +425,5 @@
 {"level":"info","message":"[2023-02-24 19:28:30] --> Method: GET Endpoint: /api/team/by-name/Spain ResponseTime: 42ms"}
 {"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":\"11\"},{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}
 {"level":"info","message":"[2023-02-24 19:28:42] --> Method: POST Endpoint: /api/team ResponseTime: 4ms"}
+{"level":"info","message":"[2023-02-25 10:56:01] --> Method: GET Endpoint: /api/team/by-name/Spain ResponseTime: 55ms"}
+{"level":"info","message":"[2023-02-25 11:06:19] --> Method: GET Endpoint: /api/team/by-name/Spain ResponseTime: 58ms"}

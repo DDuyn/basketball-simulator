@@ -6,7 +6,7 @@ import { GetAllTeamsResponse } from './GetAllTeamsResponse';
 @Service()
 export class GetAllTeams extends Endpoint<Request, GetAllTeamsResponse> {
 	configure(): void {
-		this.VERBS.Get('/teams');
+		this.get('/teams');
 	}
 
 	async handle(_request: Request, response: GetAllTeamsResponse): Promise<GetAllTeamsResponse> {

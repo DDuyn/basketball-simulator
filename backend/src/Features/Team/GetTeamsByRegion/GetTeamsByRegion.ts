@@ -10,7 +10,7 @@ import { GetTeamsByRegionResponse } from './GetTeamsByRegionResponse';
 @Service()
 export class GetTeamsByRegion extends Endpoint<GetTeamsByRegionRequest, GetTeamsByRegionResponse> {
 	configure(): void {
-		this.VERBS.Get('/team/by-region/:code', GetTeamsByRegionSchemaValidation);
+		this.get('/team/by-region/:code', GetTeamsByRegionSchemaValidation);
 	}
 
 	async handle(

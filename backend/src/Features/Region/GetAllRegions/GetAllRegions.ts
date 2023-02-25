@@ -6,7 +6,7 @@ import { GetAllRegionsResponse } from './GetAllRegionsResponse';
 @Service()
 export class GetAllRegions extends Endpoint<Request, GetAllRegionsResponse> {
 	configure(): void {
-		this.VERBS.Get('/regions');
+		this.get('/regions');
 	}
 
 	async handle(_request: Request, response: GetAllRegionsResponse): Promise<GetAllRegionsResponse> {

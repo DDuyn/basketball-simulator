@@ -11,7 +11,7 @@ import { CreateRegionResponse } from './CreateRegionResponse';
 @Service()
 export class CreateRegion extends Endpoint<CreateRegionRequest, CreateRegionResponse> {
 	configure(): void {
-		this.VERBS.Post('/region', CreateRegionSchemaValidation);
+		this.post('/region', CreateRegionSchemaValidation);
 	}
 
 	async handle(

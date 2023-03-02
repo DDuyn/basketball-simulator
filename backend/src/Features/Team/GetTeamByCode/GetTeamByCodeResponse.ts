@@ -1,6 +1,6 @@
 import { Response } from 'express';
 
-export interface GetTeamByNameResponse extends Response {
+export interface GetTeamByCodeResponse extends Response {
 	id: string;
 	name: string;
 	code: string;

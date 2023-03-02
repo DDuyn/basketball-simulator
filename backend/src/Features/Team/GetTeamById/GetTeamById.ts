@@ -1,29 +1,29 @@
 import { Service } from 'typedi';
 import { NotFoundException } from '../../../Domain/Shared/Exceptions/NotFoundException';
 import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
-import { GetTeamByNameRequest, GetTeamByNameSchemaValidation } from './GetTeamByNameRequest';
-import { GetTeamByNameResponse } from './GetTeamByNameResponse';
+import { GetTeamByIdRequest, GetTeamByIdSchemaValidation } from './GetTeamByIdRequest';
+import { GetTeamByIdResponse } from './GetTeamByIdResponse';
 
 @Service()
-export class GetTeamByName extends Endpoint<GetTeamByNameRequest, GetTeamByNameResponse> {
+export class GetTeamById extends Endpoint<GetTeamByIdRequest, GetTeamByIdResponse> {
 	configure(): void {
-		this.get('/team/by-name/:name', GetTeamByNameSchemaValidation);
+		this.get('/team/by-id/:id', GetTeamByIdSchemaValidation);
 	}
 
 	async handle(
-		request: GetTeamByNameRequest,
-		response: GetTeamByNameResponse
-	): Promise<GetTeamByNameResponse> {
-		const name = request.params.name;
+		request: GetTeamByIdRequest,
+		response: GetTeamByIdResponse
+	): Promise<GetTeamByIdResponse> {
+		const id = request.params.id;
 
 		const connection = await this.connection();
 
 		const team = await connection.team.findFirst({
-			where: { name },
+			where: { id },
 			include: { region: true }
 		});
 
-		if (!team) throw new NotFoundException(`${name} team not found`);
+		if (!team) throw new NotFoundException(`${id} id team not found`);
 
 		const teamResponse = {
 			id: team.id,
@@ -32,7 +32,7 @@ export class GetTeamByName extends Endpoint<GetTeamByNameRequest, GetTeamByNameR
 			flag: team.flag,
 			regionId: team.region.id,
 			regionName: team.region.name
-		} as GetTeamByNameResponse;
+		} as GetTeamByIdResponse;
 
 		return response.status(200).json(teamResponse);
 	}

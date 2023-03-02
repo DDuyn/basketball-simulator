@@ -427,3 +427,50 @@
 {"level":"info","message":"[2023-02-24 19:28:42] --> Method: POST Endpoint: /api/team ResponseTime: 4ms"}
 {"level":"info","message":"[2023-02-25 10:56:01] --> Method: GET Endpoint: /api/team/by-name/Spain ResponseTime: 55ms"}
 {"level":"info","message":"[2023-02-25 11:06:19] --> Method: GET Endpoint: /api/team/by-name/Spain ResponseTime: 58ms"}
+{"level":"error","message":"[{\"Field\":\"code\",\"Message\":\"The region code is not valid\",\"Value\":\"Europe\"}]"}
+{"level":"info","message":"[2023-03-01 13:06:18] --> Method: GET Endpoint: /api/team/by-region/Europe ResponseTime: 30ms"}
+{"level":"info","message":"[2023-03-01 13:06:26] --> Method: GET Endpoint: /api/team/by-region/EU ResponseTime: 54ms"}
+{"level":"info","message":"[2023-03-01 13:07:42] --> Method: GET Endpoint: /api/team/by-region/EUS ResponseTime: 6ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"EUS has no teams\"}"}
+{"level":"info","message":"[2023-03-01 13:09:00] --> Method: GET Endpoint: /api/team/by-region/EUS ResponseTime: 56ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"eu has no teams\"}"}
+{"level":"info","message":"[2023-03-01 13:09:08] --> Method: GET Endpoint: /api/team/by-region/eu ResponseTime: 7ms"}
+{"level":"info","message":"[2023-03-01 13:09:26] --> Method: GET Endpoint: /api/team/by-region/eu ResponseTime: 42ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"spain team not found\"}"}
+{"level":"info","message":"[2023-03-01 13:09:34] --> Method: GET Endpoint: /api/team/by-name/spain ResponseTime: 8ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"SPAIN team not found\"}"}
+{"level":"info","message":"[2023-03-01 13:09:47] --> Method: GET Endpoint: /api/team/by-name/spain ResponseTime: 32ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"bosnia and herzegovina\"}]"}
+{"level":"info","message":"[2023-03-01 13:10:10] --> Method: GET Endpoint: /api/team/by-name/bosnia%20and%20herzegovina ResponseTime: 3ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"bosnia-and-herzegovina\"}]"}
+{"level":"info","message":"[2023-03-01 13:10:20] --> Method: GET Endpoint: /api/team/by-name/bosnia-and-herzegovina ResponseTime: 2ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"BOSNIAANDHERZEGOVINA team not found\"}"}
+{"level":"info","message":"[2023-03-01 13:10:29] --> Method: GET Endpoint: /api/team/by-name/bosniaandherzegovina ResponseTime: 5ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"SPAIN team not found\"}"}
+{"level":"info","message":"[2023-03-01 13:10:41] --> Method: GET Endpoint: /api/team/by-name/spain ResponseTime: 4ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"Bosnia And Hezergovina\"}]"}
+{"level":"info","message":"[2023-03-01 14:45:38] --> Method: GET Endpoint: /api/team/by-name/Bosnia%20And%20Hezergovina ResponseTime: 26ms"}
+{"level":"info","message":"[2023-03-01 14:45:46] --> Method: GET Endpoint: /api/team/by-name/Malta ResponseTime: 35ms"}
+{"level":"info","message":"[2023-03-01 14:46:10] --> Method: GET Endpoint: /api/team/by-region/eu ResponseTime: 10ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"Great Britain\"}]"}
+{"level":"info","message":"[2023-03-01 14:46:26] --> Method: GET Endpoint: /api/team/by-name/Great%20Britain ResponseTime: 1ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be string\",\"Value\":\"Great-Britain\"}]"}
+{"level":"info","message":"[2023-03-01 14:46:31] --> Method: GET Endpoint: /api/team/by-name/Great-Britain ResponseTime: 2ms"}
+{"level":"info","message":"[2023-03-01 15:02:03] --> Method: GET Endpoint: /api/team/by-name/Great-Britain ResponseTime: 11ms"}
+{"level":"error","message":"[{\"Field\":\"code\",\"Message\":\"The code must be string\",\"Value\":\"Great-Britain\"},{\"Field\":\"code\",\"Message\":\"The length of code must be three characters\",\"Value\":\"Great-Britain\"}]"}
+{"level":"info","message":"[2023-03-01 15:02:09] --> Method: GET Endpoint: /api/team/by-code/Great-Britain ResponseTime: 9ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"esp team not found\"}"}
+{"level":"info","message":"[2023-03-01 15:02:22] --> Method: GET Endpoint: /api/team/by-code/esp ResponseTime: 51ms"}
+{"level":"info","message":"[2023-03-01 15:02:26] --> Method: GET Endpoint: /api/team/by-code/ESP ResponseTime: 6ms"}
+{"level":"info","message":"[2023-03-01 16:05:44] --> Method: GET Endpoint: /api/team/by-id/1284a33d-8b1d-4d94-81c7-53957ed5d657 ResponseTime: 9ms"}
+{"level":"info","message":"[2023-03-01 16:07:29] --> Method: GET Endpoint: /api/team/by-id/1284a33d-8b1d-4d94-81c7-53957ed5d657 ResponseTime: 61ms"}
+{"level":"error","message":"{\"type\":\"NotFoundException\",\"status\":404,\"message\":\"1284a33d-8b1d-4d94-81c7-53957ed5d651 team not found\"}"}
+{"level":"info","message":"[2023-03-01 16:07:35] --> Method: GET Endpoint: /api/team/by-id/1284a33d-8b1d-4d94-81c7-53957ed5d651 ResponseTime: 7ms"}
+{"level":"error","message":"[{\"Field\":\"id\",\"Message\":\"The id must be uuid valid\",\"Value\":\"1284a33d-8b1d-4d94-81c7-53957ed5d65\"}]"}
+{"level":"info","message":"[2023-03-01 16:07:43] --> Method: GET Endpoint: /api/team/by-id/1284a33d-8b1d-4d94-81c7-53957ed5d65 ResponseTime: 2ms"}
+{"level":"info","message":"[2023-03-01 16:07:46] --> Method: GET Endpoint: /api/team/by-id/1284a33d-8b1d-4d94-81c7-53957ed5d657 ResponseTime: 3ms"}
+{"level":"info","message":"[2023-03-01 16:37:02] --> Method: GET Endpoint: /api/regions ResponseTime: 41ms"}
+{"level":"info","message":"[2023-03-01 16:37:16] --> Method: GET Endpoint: /api/region/by-id/63bd01f5-deb1-48d8-84b6-f0084455046e ResponseTime: 12ms"}
+{"level":"error","message":"[{\"Field\":\"code\",\"Message\":\"The code must be string\",\"Value\":\"63bd01f5-deb1-48d8-84b6-f0084455046e\"},{\"Field\":\"code\",\"Message\":\"The length of code must be two characters\",\"Value\":\"63bd01f5-deb1-48d8-84b6-f0084455046e\"}]"}
+{"level":"info","message":"[2023-03-02 13:32:51] --> Method: GET Endpoint: /api/region/by-code/63bd01f5-deb1-48d8-84b6-f0084455046e ResponseTime: 24ms"}
+{"level":"info","message":"[2023-03-02 13:33:00] --> Method: GET Endpoint: /api/region/by-code/eu ResponseTime: 51ms"}

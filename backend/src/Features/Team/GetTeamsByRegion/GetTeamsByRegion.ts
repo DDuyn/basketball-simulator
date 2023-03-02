@@ -23,12 +23,12 @@ export class GetTeamsByRegion extends Endpoint<GetTeamsByRegionRequest, GetTeams
 		const teams = await connection.team.findMany({
 			where: {
 				region: {
-					code: code
+					code: code.toUpperCase()
 				}
 			}
 		});
 
-		if (!teams) throw new NotFoundException(`${code} has no teams`);
+		if (!teams || teams.length == 0) throw new NotFoundException(`${code} has no teams`);
 
 		const teamsResponse: GetTeamsByRegionResponse[] = teams.map((team) => {
 			const { id, name, code, flag } = team;

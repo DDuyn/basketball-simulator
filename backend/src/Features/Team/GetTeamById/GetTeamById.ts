@@ -1,11 +1,16 @@
-import { Service } from 'typedi';
+import { Inject, Service } from 'typedi';
 import { NotFoundException } from '../../../Domain/Shared/Exceptions/NotFoundException';
+import { DatabaseContext } from '../../../Infrastructure/Persistence/Context/DatabaseContext';
 import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import { GetTeamByIdRequest, GetTeamByIdSchemaValidation } from './GetTeamByIdRequest';
 import { GetTeamByIdResponse } from './GetTeamByIdResponse';
 
 @Service()
 export class GetTeamById extends Endpoint<GetTeamByIdRequest, GetTeamByIdResponse> {
+	constructor(@Inject() private readonly dbContext: DatabaseContext) {
+		super();
+	}
+
 	configure(): void {
 		this.get('/team/by-id/:id', GetTeamByIdSchemaValidation);
 	}
@@ -16,9 +21,7 @@ export class GetTeamById extends Endpoint<GetTeamByIdRequest, GetTeamByIdRespons
 	): Promise<GetTeamByIdResponse> {
 		const id = request.params.id;
 
-		const connection = await this.connection();
-
-		const team = await connection.team.findFirst({
+		const team = await this.dbContext.Teams().findFirst({
 			where: { id },
 			include: { region: true }
 		});

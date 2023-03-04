@@ -1,16 +1,21 @@
 import { randomUUID } from 'crypto';
-import { Service } from 'typedi';
+import { Inject, Service } from 'typedi';
 import { Team } from '../../../Domain/Team/Team';
 import { TeamCode } from '../../../Domain/Team/TeamCode';
 import { TeamFlag } from '../../../Domain/Team/TeamFlag';
 import { TeamId } from '../../../Domain/Team/TeamId';
 import { TeamName } from '../../../Domain/Team/TeamName';
+import { DatabaseContext } from '../../../Infrastructure/Persistence/Context/DatabaseContext';
 import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import { CreateTeamRequest, CreateTeamSchemaValidation } from './CreateTeamRequest';
 import { CreateTeamResponse } from './CreateTeamResponse';
 
 @Service()
 export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> {
+	constructor(@Inject() private readonly dbContext: DatabaseContext) {
+		super();
+	}
+
 	configure(): void {
 		this.post('/team', CreateTeamSchemaValidation);
 	}
@@ -29,8 +34,7 @@ export class CreateTeam extends Endpoint<CreateTeamRequest, CreateTeamResponse> 
 			region
 		);
 
-		const connection = await this.connection();
-		const teamCreated = await connection.team.create({
+		const teamCreated = await this.dbContext.Teams().create({
 			data: {
 				id: team.id.value,
 				name: team.name.value,

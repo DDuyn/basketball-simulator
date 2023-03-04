@@ -17,4 +17,12 @@ export class DatabaseContext {
 	async getConnection(): Promise<PrismaClient> {
 		return this.connection;
 	}
+
+	Regions() {
+		return this.connection.region;
+	}
+
+	Teams() {
+		return this.connection.team;
+	}
 }

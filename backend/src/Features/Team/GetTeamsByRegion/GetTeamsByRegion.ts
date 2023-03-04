@@ -1,5 +1,6 @@
-import { Service } from 'typedi';
+import { Inject, Service } from 'typedi';
 import { NotFoundException } from '../../../Domain/Shared/Exceptions/NotFoundException';
+import { DatabaseContext } from '../../../Infrastructure/Persistence/Context/DatabaseContext';
 import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import {
 	GetTeamsByRegionRequest,
@@ -9,6 +10,10 @@ import { GetTeamsByRegionResponse } from './GetTeamsByRegionResponse';
 
 @Service()
 export class GetTeamsByRegion extends Endpoint<GetTeamsByRegionRequest, GetTeamsByRegionResponse> {
+	constructor(@Inject() private readonly dbContext: DatabaseContext) {
+		super();
+	}
+
 	configure(): void {
 		this.get('/team/by-region/:code', GetTeamsByRegionSchemaValidation);
 	}
@@ -19,8 +24,7 @@ export class GetTeamsByRegion extends Endpoint<GetTeamsByRegionRequest, GetTeams
 	): Promise<GetTeamsByRegionResponse> {
 		const code = request.params.code;
 
-		const connection = await this.connection();
-		const teams = await connection.team.findMany({
+		const teams = await this.dbContext.Teams().findMany({
 			where: {
 				region: {
 					code: code.toUpperCase()

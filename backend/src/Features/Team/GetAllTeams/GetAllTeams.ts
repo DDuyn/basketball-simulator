@@ -1,17 +1,21 @@
 import { Request } from 'express';
-import { Service } from 'typedi';
+import { Inject, Service } from 'typedi';
+import { DatabaseContext } from '../../../Infrastructure/Persistence/Context/DatabaseContext';
 import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import { GetAllTeamsResponse } from './GetAllTeamsResponse';
 
 @Service()
 export class GetAllTeams extends Endpoint<Request, GetAllTeamsResponse> {
+	constructor(@Inject() private readonly dbContext: DatabaseContext) {
+		super();
+	}
+
 	configure(): void {
 		this.get('/teams');
 	}
 
 	async handle(_request: Request, response: GetAllTeamsResponse): Promise<GetAllTeamsResponse> {
-		const connection = await this.connection();
-		const teams = await connection.team.findMany({
+		const teams = await this.dbContext.Teams().findMany({
 			include: {
 				region: true
 			}

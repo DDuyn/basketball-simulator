@@ -474,3 +474,11 @@
 {"level":"error","message":"[{\"Field\":\"code\",\"Message\":\"The code must be string\",\"Value\":\"63bd01f5-deb1-48d8-84b6-f0084455046e\"},{\"Field\":\"code\",\"Message\":\"The length of code must be two characters\",\"Value\":\"63bd01f5-deb1-48d8-84b6-f0084455046e\"}]"}
 {"level":"info","message":"[2023-03-02 13:32:51] --> Method: GET Endpoint: /api/region/by-code/63bd01f5-deb1-48d8-84b6-f0084455046e ResponseTime: 24ms"}
 {"level":"info","message":"[2023-03-02 13:33:00] --> Method: GET Endpoint: /api/region/by-code/eu ResponseTime: 51ms"}
+{"level":"info","message":"[2023-03-04 19:43:04] --> Method: GET Endpoint: /api/regions ResponseTime: 45ms"}
+{"level":"info","message":"[2023-03-04 19:43:07] --> Method: GET Endpoint: /api/region/by-id/63bd01f5-deb1-48d8-84b6-f0084455046e ResponseTime: 14ms"}
+{"level":"info","message":"[2023-03-04 19:43:14] --> Method: GET Endpoint: /api/region/by-code/eu ResponseTime: 6ms"}
+{"level":"error","message":"[{\"Field\":\"name\",\"Message\":\"The name must be a string\",\"Value\":\"11\"},{\"Field\":\"region.id\",\"Message\":\"The regionId is required\"},{\"Field\":\"region.id\",\"Message\":\"The regionId must be uuid valid\"}]"}
+{"level":"info","message":"[2023-03-04 19:43:20] --> Method: POST Endpoint: /api/team ResponseTime: 5ms"}
+{"level":"info","message":"[2023-03-04 19:43:22] --> Method: GET Endpoint: /api/teams ResponseTime: 17ms"}
+{"level":"info","message":"[2023-03-04 19:43:24] --> Method: GET Endpoint: /api/team/by-region/eu ResponseTime: 6ms"}
+{"level":"info","message":"[2023-03-04 19:43:30] --> Method: GET Endpoint: /api/team/by-id/1284a33d-8b1d-4d94-81c7-53957ed5d657 ResponseTime: 5ms"}

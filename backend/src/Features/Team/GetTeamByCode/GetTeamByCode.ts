@@ -1,11 +1,16 @@
-import { Service } from 'typedi';
+import { Inject, Service } from 'typedi';
 import { NotFoundException } from '../../../Domain/Shared/Exceptions/NotFoundException';
+import { DatabaseContext } from '../../../Infrastructure/Persistence/Context/DatabaseContext';
 import { Endpoint } from '../../../Infrastructure/Routes/Endpoint';
 import { GetTeamByCodeRequest, GetTeamByCodeSchemaValidation } from './GetTeamByCodeRequest';
 import { GetTeamByCodeResponse } from './GetTeamByCodeResponse';
 
 @Service()
 export class GetTeamByCode extends Endpoint<GetTeamByCodeRequest, GetTeamByCodeResponse> {
+	constructor(@Inject() private readonly dbContext: DatabaseContext) {
+		super();
+	}
+
 	configure(): void {
 		this.get('/team/by-code/:code', GetTeamByCodeSchemaValidation);
 	}
@@ -16,9 +21,7 @@ export class GetTeamByCode extends Endpoint<GetTeamByCodeRequest, GetTeamByCodeR
 	): Promise<GetTeamByCodeResponse> {
 		const code = request.params.code;
 
-		const connection = await this.connection();
-
-		const team = await connection.team.findFirst({
+		const team = await this.dbContext.Teams().findFirst({
 			where: { code: code.toUpperCase() },
 			include: { region: true }
 		});

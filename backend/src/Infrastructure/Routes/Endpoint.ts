@@ -1,23 +1,16 @@
-import { PrismaClient } from '@prisma/client';
 import { NextFunction, Request, Response, Router } from 'express';
-import { Inject } from 'typedi';
 
 import { RequestValidatorMiddleware } from '../Middleware/RequestValidatorMiddleware';
-import { DatabaseContext } from '../Persistence/Context/DatabaseContext';
 import { SchemaValidation } from '../Types/SchemaValidation';
 import { RegisterEndpoints } from './RegisterEndpoints';
 
 export abstract class Endpoint<TReq extends Request, TRes extends Response> {
 	private router: Router;
 
-	constructor(@Inject() private readonly dbContext: DatabaseContext) {
+	constructor() {
 		this.router = Router();
 		this.configure();
 		this.registerEndpoint();
-	}
-
-	protected async connection(): Promise<PrismaClient> {
-		return this.dbContext.getConnection();
 	}
 
 	protected post(path: string, schemaValidation?: SchemaValidation) {

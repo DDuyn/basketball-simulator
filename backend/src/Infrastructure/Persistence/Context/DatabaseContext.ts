@@ -19,10 +19,10 @@ export class DatabaseContext {
 	}
 
 	Regions() {
-		return this.connection.region;
+		return this.connection.regions;
 	}
 
 	Teams() {
-		return this.connection.team;
+		return this.connection.teams;
 	}
 }

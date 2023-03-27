@@ -7,29 +7,57 @@ datasource db {
   url      = "file:./Database/basketball-simulator.sqlite3"
 }
 
-model Region {
-  id           String        @id @default(uuid())
+model Regions {
+  id           String         @id @default(uuid())
   name         String
-  code         String        @unique
-  competitions Competition[]
-  teams        Team[]
+  code         String         @unique
+  competitions Competitions[]
+  teams        Teams[]
 }
 
-model Team {
-  id       String @id @default(uuid())
+model Teams {
+  id       String  @id @default(uuid())
   name     String
-  code     String @unique
+  code     String  @unique
   flag     String
   regionId String
-  region   Region @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  region   Regions @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
-model Competition {
-  id       String @id @default(uuid())
+model Competitions {
+  id       String   @id @default(uuid())
   name     String
-  code     String @unique
-  quantity Int
-  games    Int
   regionId String
-  region   Region @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  region   Regions  @relation(fields: [regionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Phases   Phases[]
+}
+
+model Phases {
+  id            String       @id @default(uuid())
+  round         Int
+  competitionId String
+  ruleId        String
+  phaseTypeId   String
+  rules         Rules        @relation(fields: [ruleId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  competition   Competitions @relation(fields: [competitionId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  phaseType     PhaseTypes   @relation(fields: [phaseTypeId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@unique([round, competitionId])
+}
+
+model PhaseTypes {
+  id     String   @id @default(uuid())
+  name   String
+  Phases Phases[]
+}
+
+model Rules {
+  id                 String   @id @default(uuid())
+  name               String
+  groups             Int
+  teamsByGroup       Int
+  teams              Int
+  games              Int
+  teamsRankedByGroup Int
+  Phases             Phases[]
 }

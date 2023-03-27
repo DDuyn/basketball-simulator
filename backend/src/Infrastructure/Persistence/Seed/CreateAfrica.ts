@@ -81,15 +81,33 @@ const COUNTRIES = [
 	{ id: randomUUID(), name: 'Zimbabwe', code: 'ZIM', flag: '', regionId: AFRICA.id }
 ];
 
+const COMPETITIONS = [
+	{
+		id: randomUUID(),
+		name: 'World Cup African PreQualifier',
+		regionId: AFRICA.id
+	},
+	{
+		id: randomUUID(),
+		name: 'World Cup African Qualifier',
+		regionId: AFRICA.id
+	}
+];
+
 export const createAfrica = async (db: PrismaClient) => {
 	console.log(`Creating AFRICA region`);
-	await db.region.create({ data: AFRICA });
+	await db.regions.create({ data: AFRICA });
+
+	for (const competition of COMPETITIONS) {
+		console.log(`Inserting ${competition.name}`);
+		await db.competitions.create({ data: competition });
+	}
 
 	for (const country of COUNTRIES) {
 		console.log(`Inserting ${country.name}`);
 
 		country.flag = `https://countryflagsapi.com/svg/${country.name}`;
-		await db.team.create({ data: country });
+		await db.teams.create({ data: country });
 
 		console.log(`${country.name} inserted successfully`);
 	}

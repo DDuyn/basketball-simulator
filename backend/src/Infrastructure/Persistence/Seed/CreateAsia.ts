@@ -55,12 +55,12 @@ const COUNTRIES = [
 
 export const createAsia = async (db: PrismaClient) => {
 	console.log(`Creating ASIA region`);
-	await db.region.create({ data: ASIA });
+	await db.regions.create({ data: ASIA });
 
 	for (const country of COUNTRIES) {
 		console.log(`Inserting ${country.name}`);
 		country.flag = `https://countryflagsapi.com/svg/${country.name}`;
-		await db.team.create({ data: country });
+		await db.teams.create({ data: country });
 		console.log(`${country.name} inserted successfully`);
 	}
 
